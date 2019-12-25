@@ -18,6 +18,9 @@ int main(int argc, char const *argv[])
         myargs[0] = strdup("wc");
         myargs[1] = strdup("exec.c");
         myargs[2] = NULL;
+
+        // OS does not create a new process; rather, it transforms the currently running program
+        // into a different running program (wc).
         execvp(myargs[0], myargs);  // run word count
         printf("this will not print");
     } else {
